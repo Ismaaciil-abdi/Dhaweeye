@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  background: url(../assets/RegtangleBg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'FONTSPRING DEMO - Criteria CF', sans-serif;
+}
+
+/* ?Rest */
+:root {
+  --primary-color: #fefaf9;
+  --secondary-color: #1DFB92;
+  --Darkgreen: #01ec7e;
+  --Darkgrey: #303030;
+  --Lightgrey: #787676;
+}
+::selection {
+  background: var(--secondary-color);
+  color: var(--Lightgrey);
+}
+
+a {
+  color: var(--Lightgrey);
+  transition: 0.15s ease-in;
+}
+a:hover {
+  color: var(--Darkgrey);
+  text-decoration: none;
+}
+p {
+  color: var(--Lightgrey);
+}
+
+
+/* *Header Styling */
+header {
+  margin-top: 25px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+nav a img {
+  width: 70%;
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  gap: 2.5em;
+  font-size: 16px;
+}
+nav ul li a.active {
+  color: var(--Darkgrey);
+  font-weight: 600;
+  border-bottom: 3px solid var(--secondary-color);
+}
+.call {
+  background-color: var(--Darkgrey);
+  color: var(--primary-color);
+  padding: 10px 25px;
+  border-radius: .7em;
+  transition: 0.25s cubic-bezier(0.82, 0.01, 0.36, 1.01);
+}
+.call:hover {
+  color: var(--primary-color);
+  background-color: var(--Lightgrey);
+}
+
+
+/* Hero Styling */
+section.hero {
+  margin-top: 80px;
+  position: relative;
+}
+.cols {
+  display: flex;
+  justify-content: space-between;
+}
+.col-left {
+  width: 40%;
+  padding-top: 50px;
+}
+.col-left h1 {
+  width: 80%;
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--Darkgrey);
+}
+.col-left p {
+  width: 80%;
+  margin-bottom: 50px;
+}
+.col-left a {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 20px 50px;
+  border-radius: .7em;
+  transition: 0.25s cubic-bezier(0.82, 0.01, 0.36, 1.01);
+}
+.col-left a:hover {
+  background-color: var(--Darkgreen);
+}
+.number-info {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 90px;
+}
+.number-info h4 {
+  font-weight: bold;
+}
+.col-right {
+  width: 60%;
+}
+.col-right img {
+  width: 80%;
+  float: right;
+  height: auto;
+  animation: bounce 4s ease-in-out infinite;
+}
+.col-right img:hover {
+  animation-play-state: paused;
+}
+.lets-talk{
+  position: absolute;
+  content: '';
+  right: 30px;
+  bottom: 60px;
+  background-color: var(--secondary-color);
+  padding: 10px;
+  border-radius: 5em;
+  box-shadow: 0 0 20px 0 var(--secondary-color);
+  transition: 0.15s ease-in;
+  cursor: pointer;
+}
+.lets-talk:hover {
+  background-color: var(--Darkgreen);
+  transform: translateY(-5px);
+}
+
+.lets-talk img {
+  width: 25px;
+}
+
+
+/* Micro intro */
+/* @keyframes bob {
+  0%{
+    transform: translateX(0);
+  }
+  50%{
+    transform: translateX(-5px);
+  }
+  100%{
+    transform: translateX(5px);
+  }
+} */
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-20px);
+  }
+  
+  50% {
+    transform: translateY(0px);
+  }
+}
+
+
+/*! Media Queries  */
+@media (max-width:670px) {
+  .list {
+    display: none;
+  }
+  .call {
+    width: auto;
+    font-size: 13px;
+    padding: 10px 20px;
+  }
+
+  .cols {
+    display: block;
+  }
+  .col-left {
+    width: 100%;
+    text-align: center;
+  }
+  .col-left h1 {
+    width: auto;
+   
+  }
+  .col-left p {
+    width: 100%;
+    
+  }
+  .number-info {
+    justify-content: space-around;
+  }
+  .col-right {
+    width: 100%;
+  }
+  .col-right img {
+    width: 100%;
+    margin-top: 70px;
+  }
+  .lets-talk {
+    position: fixed;
+  }
+}
+@media (max-width:930px) {
+  .list {
+    display: none;
+  }
+  .cols {
+    display: block;
+  }
+  .col-left {
+    width: 100%;
+    text-align: center;
+  }
+  .col-left {
+    font-size: 20px;
+  }
+  .col-left h1 {
+    width: auto;
+    font-size: 3rem;
+  }
+  .col-left p {
+    width: 100%;
+  }
+  .col-right {
+    width: 100%;
+  }
+  .col-right img {
+    width: 100%;
+    margin-top: 70px;
+  }
+  .lets-talk {
+    position: fixed;
+  }
+  .number-info {
+    justify-content: space-around;
+  }
+}
